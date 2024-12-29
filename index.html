@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    #search {
+    background-color: #edf1f6; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin: 20px 0; 
+}
+
+#search h2 {
+    font-size: 24px; 
+    margin-bottom: 15px;
+}
+
+#search input[type="text"] {
+    width: calc(100% - 120px); 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 16px; 
+}
+
+#search button {
+    padding: 10px 15px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    margin-left: 10px; 
+}
+
+#search button:hover {
+    background-color: #0056b3; 
+}
+</style>
+<body>
+    <header>
+        <img src="logo.jpg" alt="Library Logo" style="width: 100px; height: auto;">
+        <h1>Books & Beyond</h1>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="index.html">Search</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="catalog1.html">Catalog</a></li>
+                <li><a href="transaction.html">Transaction</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="search">
+            <h2>Search for Books</h2>
+            <input type="text" placeholder="Search by title, author, or genre">
+            <button>Search</button>
+        </section>
+
+        
+        <hr>
+
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li>Book Club Meeting - January 15, 2025</li>
+                <li>Author Talk - February 10, 2025</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Books & Beyond. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction - Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#transactionForm').on('submit', function(event) {
+                event.preventDefault();
+                let bookTitle = $('#bookTitle').val();
+                let userId = $('#userId').val();
+                
+                if (bookTitle === "" || userId === "") {
+                    alert("Please fill in all fields.");
+                } else {
+                    alert("Transaction successful!");
+                    
+                }
+            });
+        });
+    </script>
+</head>
+<style>
+    #transaction {
+    background-color: #edf1f6; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin: 20px 0; 
+}
+
+#transaction h2 {
+    font-size: 24px; 
+    margin-bottom: 15px; 
+}
+
+#transaction label {
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+}
+
+#transaction input[type="text"] {
+    width: calc(100% - 20px); 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 16px; 
+    margin-bottom: 15px; 
+}
+
+#transaction button {
+    padding: 10px 15px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-size: 16px; 
+}
+
+#transaction button:hover {
+    background-color: #0056b3; 
+}
+</style>
+<body>
+    <header>
+        <img src="logo.jpg" alt="Library Logo" style="width: 100px; height: auto;">
+        <h1>Books & Beyond</h1>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="index.html">Search</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="catalog1.html">Catalog</a></li>
+                <li><a href="transaction.html">Transaction</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="transaction">
+            <h2>Transaction Form</h2>
+            <form id="transactionForm">
+                <label for="bookTitle">Book Title:</label>
+                <input type="text" id="bookTitle" name="bookTitle" required>
+                <br>
+                <label for="userId">User  ID:</label>
+                <input type="text" id="userId" name="userId" required>
+                <br>
+                <button type="submit">Submit Transaction</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Books & Beyond. All rights reserved.</p>
+    </footer>
+</body>
+</html>

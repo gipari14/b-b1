@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Book Catalog</title>
+    <style>
+        html, body {
+        height: 100%; 
+        margin: 0;
+        }
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d3d5d0;
+        }
+
+        header {
+            background: #3f7884;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #35424a;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4CAF50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3f7884;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #3f7884;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.jpg" alt="Library Logo" style="width: 100px; height: auto;">
+        <h1>Books & Beyond</h1>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="catalog">
+            <h2>Add a Book</h2>
+            <form id="bookForm">
+                <label for="bookTitle">Book Title:</label>
+                <input type="text" id="bookTitle" required>
+                <br>
+                <label for="bookAuthor">Author:</label>
+                <input type="text" id="bookAuthor" required>
+                <br>
+                <label for="bookGenre">Genre:</label>
+                <input type="text" id="bookGenre" required>
+                <br>
+                <button type="submit">Add Book</button>
+            </form>
+
+            <h2>Book Catalog</h2>
+            <table id="bookTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Books & Beyond. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookForm = document.getElementById('bookForm');
+            const bookTable = document.getElementById('bookTable').getElementsByTagName('tbody')[0];
+
+            bookForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Get the values from the input fields
+                const title = document.getElementById('bookTitle').value;
+                const author = document.getElementById('bookAuthor').value;
+                const genre = document.getElementById('bookGenre').value;
+
+                // Create a new row for the book
+                const newRow = bookTable.insertRow();
+                newRow.innerHTML = `
+                    <td>${title}</td>
+                    <td>${author}</td>
+                    <td>${genre}</td>
+                    <td><button class="deleteBtn">Delete</button></td>
+                `;
+
+                // Clear the input fields
+                document.getElementById('bookTitle').value = '';
+                document.getElementById('bookAuthor').value = '';
+                document.getElementById('bookGenre').value = '';
+
+                // Add event listener to the delete button
+                newRow.querySelector('.deleteBtn').addEventListener('click', function() {
+                    bookTable.deleteRow(newRow.rowIndex - 1);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
