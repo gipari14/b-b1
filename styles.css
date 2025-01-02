@@ -54,54 +54,52 @@ footer {
     color: #ffffff;
 }
 
-/* Media Queries */
 
-/* Untuk perangkat dengan lebar maksimum 600px (ponsel) */
 @media (max-width: 600px) {
     header img {
-        width: 80px; /* Mengurangi ukuran gambar header */
+        width: 80px; 
     }
 
     nav ul li {
-        display: block; /* Mengubah menu menjadi vertikal */
-        margin: 10px 0; /* Menambahkan margin vertikal */
+        display: block; 
+        margin: 10px 0; 
     }
 
     main {
-        padding: 10px; /* Mengurangi padding di main */
+        padding: 10px; 
     }
 
     h2 {
-        font-size: 20px; /* Mengurangi ukuran font h2 */
+        font-size: 20px; 
     }
 }
 
-/* Untuk perangkat dengan lebar maksimum 900px (tablet) */
+
 @media (max-width: 900px) {
     header img {
-        width: 90px; /* Mengurangi ukuran gambar header */
+        width: 90px; 
     }
 
     nav ul li {
-        margin: 0 10px; /* Mengurangi margin horizontal */
+        margin: 0 10px;
     }
 
     main {
-        padding: 15px; /* Mengurangi padding di main */
+        padding: 15px; 
     }
 
     h2 {
-        font-size: 22px; /* Mengurangi ukuran font h2 */
+        font-size: 22px; 
     }
 }
 
-/* Untuk perangkat dengan lebar minimum 901px (desktop) */
+
 @media (min-width: 901px) {
     nav ul li {
-        margin: 0 20px; /* Mengembalikan margin horizontal untuk desktop */
+        margin: 0 20px; 
     }
 
     h2 {
-        font-size: 24px; /* Ukuran font h2 untuk desktop */
+        font-size: 24px; 
     }
 }
