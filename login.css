@@ -1,4 +1,4 @@
-* {
+{
     box-sizing: border-box;
 }
 
@@ -63,4 +63,49 @@ button {
 
 button:hover {
     background-color: #2575fc;
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .login-form h2 {
+        font-size: 20px; 
+    }
+
+    button {
+        padding: 8px; 
+        font-size: 14px; 
+    }
+}
+
+
+@media (max-width: 900px) {
+    .container {
+        padding: 30px; 
+        width: 80%;
+    }
+
+    .login-form h2 {
+        font-size: 22px; 
+    }
+
+    button {
+        padding: 9px; 
+        font-size: 15px; 
+    }
+}
+
+
+@media (min-width: 901px) {
+    .container {
+        width: 400px; 
+    }
+
+    .login-form h2 {
+        font-size: 24px; /* Ukuran font h2 untuk desktop */
+    }
 }
